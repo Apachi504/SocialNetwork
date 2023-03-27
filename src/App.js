@@ -11,15 +11,16 @@ import {Route, Routes} from "react-router-dom";
 import Setting from "./components/Setting/Setting";
 
 
-function App() {
+function App(props) {
+
     return (
         <div className='app-wrapper'>
             <Header/>
             <NavBar/>
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route path="/*" element={<Profile/>}/>
-                    <Route path="/dialogs/*" element={<Dialogs/>}/>
+                    <Route path="/*" element={<Profile postData={props.postData}/>}/>
+                    <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
                     <Route path="/news" element={<News/>}/>
                     <Route path="/music" element={<Music/>}/>
                     <Route path="/setting" element={<Setting/>}/>
