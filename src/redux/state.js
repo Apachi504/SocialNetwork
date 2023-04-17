@@ -5,7 +5,8 @@ let state = {
         postData: [
             {id: 1, message: "Hi, how are you?", like: 24},
             {id: 2, message: "hello world", like: 13}
-        ]
+        ],
+        newPostText: 'it-camasutra.com'
     },
     messagesPage: {
         dialogs: [
@@ -27,14 +28,20 @@ let state = {
     }
 
 }
-export let addPost = (postMessage) => {
-    debugger;
+window.state = state;
+export let addPost = () => {
     let newPost = {
-        id: 5,
-        message: postMessage,
+        id: state.profilePage.postData.length+1,
+        message: state.profilePage.newPostText,
         like: 6
     };
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+export let updateNewPostText = (newPostText) => {
+
+    state.profilePage.newPostText = newPostText;
     rerenderEntireTree(state);
 }
 export default state;

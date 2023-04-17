@@ -9,25 +9,25 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import {Route, Routes} from "react-router-dom";
 import Setting from "./components/Setting/Setting";
+import {updateNewPostText} from "./redux/state";
 
 
 function App(props) {
 
-    return (
-        <div className='app-wrapper'>
+    return (<div className='app-wrapper'>
             <Header/>
             <NavBar/>
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route path="/*" element={<Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                    <Route path="/*" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost}
+                                                       updateNewPostText={props.updateNewPostText}/>}/>
                     <Route path="/dialogs/*" element={<Dialogs state={props.state.messagesPage}/>}/>
                     <Route path="/news" element={<News/>}/>
                     <Route path="/music" element={<Music/>}/>
                     <Route path="/setting" element={<Setting/>}/>
                 </Routes>
             </div>
-        </div>
-    );
+        </div>);
 }
 
 export default App;
