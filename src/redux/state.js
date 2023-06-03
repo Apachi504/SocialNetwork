@@ -63,17 +63,10 @@ let store = {
         }
         else if (action.type === ADD_MESSAGE_BODY)
         {
-            let newMessage = {
-                id: this._state.messagesPage.messages.length + 1,
-                message: this._state.messagesPage.newMessageBody,
-            };
-            this._state.messagesPage.messages.push(newMessage);
-            this._state.messagesPage.newMessageBody = '';
-            this._callSubscriber(this._state);
+
         } else if (action.type === UPDATE_NEW_MESSAGE_BODY)
         {
-            this._state.messagesPage.newMessageBody = action.newMessageBody;
-            this._callSubscriber(this._state);
+
         }
     }
 }
