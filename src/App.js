@@ -9,7 +9,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import {Route, Routes} from "react-router-dom";
 import Setting from "./components/Setting/Setting";
-import {updateNewPostText} from "./redux/state";
+// import {updateNewPostText} from "./redux/store";
 
 
 function App(props) {
