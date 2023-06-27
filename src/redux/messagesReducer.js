@@ -2,6 +2,7 @@ const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const ADD_MESSAGE_BODY = 'ADD-MESSAGE-BODY';
 
 let initState = {
+    messagesPage:{
     dialogs: [
         {id: 1, name: 'Vlad'},
         {id: 2, name: 'Evgenie'},
@@ -20,14 +21,14 @@ let initState = {
     ],
     newMessageBody: 'Hi, how a u?'
 }
+}
 
 const messagesReducer = (state = initState, action) => {
-    debugger;
     switch (action.type) {
         case ADD_MESSAGE_BODY:
             let newMessage = {
                 id: state.messages.length + 1,
-                message: state.newMessageBody,
+                messages: state.newMessageBody,
             };
             state.messages.push(newMessage);
             state.newMessageBody = '';

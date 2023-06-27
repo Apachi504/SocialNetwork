@@ -1,11 +1,13 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let initState = {
+    profilePage: {
     postData: [
         {id: 1, message: "Hi, how are you?", like: 24},
         {id: 2, message: "hello world", like: 13}
     ],
     newPostText: 'it-camasutra.com'
+}
 }
 
 const ProfileReducer = (state = initState, action) => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './Profile.module.css';
-import MyPost from "./MyPost/MyPost";
-// import {updateNewPostText} from "../../redux/store";
+import MyPostContainer from "./MyPost/MyPostContainer";
+// import {updateNewPostText} from "../../redux/redux-store";
 
 const Profile = (props) => {
-
+debugger;
     return (
         <div className={s.content}>
             <div>
@@ -14,8 +14,7 @@ const Profile = (props) => {
                 avatar + description
             </div>
 
-            <MyPost postData={props.profilePage.postData} newPostText={props.profilePage.newPostText}
-                    dispatch={props.dispatch}/>
+            <MyPostContainer store={props.store}/>
         </div>
     );
 }
